@@ -1,3 +1,4 @@
+<?php require 'pages/session.php' ?>
 <!DOCTYPE html>
 <html>
   <?php require 'pages/header.php';?>
@@ -25,20 +26,23 @@
 				<?php
 					require 'db/db.php';
 
-					$sql = "SELECT name, address FROM venues";
-					$result = $con->query($sql);
+					$sql = "SELECT * FROM venues ORDER BY id";
+					$result = mysqli_query($con, $sql);
+					$count = 1;
 
-					if ($result->num_rows > 0) {
+					if (mysqli_num_rows($result) > 0) {
 						// output data of each row
-						while($row = $result->fetch_assoc()) {
+						while($row = mysqli_fetch_assoc($result)) {
 							echo "<table>";
 								echo "<tr>";
+									echo "<th>S/N</th>";
 									echo "<th>Name</th>";
 									echo "<th>Address</th>";
 									echo "<th></th>";
 								echo "</tr>";
 							while($row = mysqli_fetch_array($result)){
 								echo "<tr>";
+									echo "<td>" . $count++ . "</td>";
 									echo "<td>" . $row['name'] . "</td>";
 									echo "<td>" . $row['address'] . "</td>";
 									echo "<td>" . "<button>edit</button> <button>del</button>" . "</td>";

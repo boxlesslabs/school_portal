@@ -9,11 +9,15 @@
 			<h2>Create User</h2>
 
             <div class="con-body form-area">
-                <form method="post">
-                    <input type="text" name="firstname" placeholder="Firstname" id="firstname" required>
-                    <input type="text" name="lastname" placeholder="Lastname" id="lastname" required>
+                <form action="pages/users_repo.php" method="post">
+                    <input type="text" name="first_name" placeholder="Firstname" id="first_name" required>
+                    <input type="text" name="last_name" placeholder="Lastname" id="last_name" required>
                     <input type="text" name="email" placeholder="Email" id="email" required>
                     <input type="password" name="password" placeholder="Password" id="password" required>
+                    <select name="role" id="role">
+                        <option value="admin">Admin</option>
+                        <option value="user">User</option>
+                    </select>
                     <input type="submit" value="Save">
                 </form>
             </div>

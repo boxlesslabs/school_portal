@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 04, 2021 at 10:53 AM
+-- Generation Time: May 04, 2021 at 05:27 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -36,6 +36,15 @@ CREATE TABLE `accounts` (
   `last_name` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `accounts`
+--
+
+INSERT INTO `accounts` (`id`, `password`, `email`, `role`, `first_name`, `last_name`) VALUES
+(2, 'password', 'patrickikoi@gmail.com', 'user', 'Patrick', 'One'),
+(3, 'password', 'patrick@softcom.ng', 'admin', 'Second', 'Driver'),
+(4, 'passwords', 'boxlesslabsng@gmail.com', 'user', 'Last', 'sample');
+
 -- --------------------------------------------------------
 
 --
@@ -43,12 +52,20 @@ CREATE TABLE `accounts` (
 --
 
 CREATE TABLE `classes` (
+  `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
-  `participants` int(11) NOT NULL,
+  `participants` varchar(11) NOT NULL,
   `start_date` date NOT NULL,
-  `venue_id` varchar(20) NOT NULL,
-  `account_id` varchar(20) NOT NULL
+  `venue` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `classes`
+--
+
+INSERT INTO `classes` (`id`, `name`, `participants`, `start_date`, `venue`) VALUES
+(1, 'app.addylogistics.com', '12', '2021-05-14', 4),
+(2, 'religion', '12', '2021-05-07', 6);
 
 -- --------------------------------------------------------
 
@@ -57,9 +74,20 @@ CREATE TABLE `classes` (
 --
 
 CREATE TABLE `venues` (
+  `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `address` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `venues`
+--
+
+INSERT INTO `venues` (`id`, `name`, `address`) VALUES
+(3, 'Entrance', 'No address here'),
+(4, 'Patrick Ikoi', 'No address here'),
+(5, 'app.addylogistics.com', 'No address here'),
+(6, 'Patrick Jesam', 'None');
 
 --
 -- Indexes for dumped tables
@@ -72,6 +100,18 @@ ALTER TABLE `accounts`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `classes`
+--
+ALTER TABLE `classes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `venues`
+--
+ALTER TABLE `venues`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -79,7 +119,19 @@ ALTER TABLE `accounts`
 -- AUTO_INCREMENT for table `accounts`
 --
 ALTER TABLE `accounts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `classes`
+--
+ALTER TABLE `classes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `venues`
+--
+ALTER TABLE `venues`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
