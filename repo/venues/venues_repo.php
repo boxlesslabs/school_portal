@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require '../db/db.php';
+    require '../../db/db.php';
     
     if ( !isset($_POST['name'], $_POST['address']) ) {
         // Could not get the data that should have been sent.
@@ -13,7 +13,7 @@
     $sql = "INSERT INTO venues ". "(name, address) ". "VALUES('$param_name','$param_address')";
 
     if (mysqli_query($con, $sql)) {
-        header('Location: ../venues.php');
+        header('Location: ../../venues.php');
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }

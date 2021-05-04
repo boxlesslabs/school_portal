@@ -10,7 +10,7 @@
 			<h2>Add a class</h2>
 
             <div class="con-body form-area">
-                <form action="repo/classes_repo.php" method="post">
+                <form action="repo/classes/classes_repo.php" method="post">
                     <input type="text" name="name" placeholder="name" id="name" required>
                     <input type="text" name="participants" placeholder="number of participants" id="participants" required>
                     <input type="date" name="start_date" id="start_date">

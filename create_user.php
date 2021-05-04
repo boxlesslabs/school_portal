@@ -10,7 +10,7 @@
 			<h2>Create User</h2>
 
             <div class="con-body form-area">
-                <form action="repo/users_repo.php" method="post">
+                <form action="repo/users/users_repo.php" method="post">
                     <input type="text" name="first_name" placeholder="Firstname" id="first_name" required>
                     <input type="text" name="last_name" placeholder="Lastname" id="last_name" required>
                     <input type="text" name="email" placeholder="Email" id="email" required>

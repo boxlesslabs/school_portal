@@ -19,39 +19,39 @@
             </div>
     
             <div class="con-body">
-				<?php
-					require 'db/db.php';
-					$result = mysqli_query($con, "SELECT * FROM accounts ORDER BY id");
-					$count = 1;
+				<table>
+					<tr>
+						<th>S/N</th>
+						<th>Name</th>
+						<th>Email</th>
+						<th>Role</th>
+						<th></th>
+					</tr>
 
-					if (mysqli_num_rows($result) > 0) {
-						// output data of each row
-						while($row = mysqli_fetch_array($result)) {
-							echo "<table>";
-								echo "<tr>";
-									echo "<th>S/N</th>";
-									echo "<th>Name</th>";
-									echo "<th>Email</th>";
-									echo "<th>Role</th>";
-									echo "<th></th>";
-								echo "</tr>";
-							while($row = mysqli_fetch_array($result)){
-								echo "<tr>";
-									echo "<td>" . $count++ . "</td>";
-									echo "<td>" . $row['first_name'] . $row['last_name'] . "</td>";
-									echo "<td>" . $row['email'] . "</td>";
-									echo "<td>" . $row['role'] . "</td>";
-									echo "<td>" . "<button>edit</button> <button>del</button>" . "</td>";
-								echo "</tr>";
-							}
-        					echo "</table>";
-						}
-					} else {
-						echo "0 results";
-					}
-					
-					$con->close();
-				?>
+					<?php require 'db/db.php';?>
+					<?php 
+						$result = mysqli_query($con, "SELECT * FROM accounts ORDER BY id");
+						$count = 1;
+						if (mysqli_num_rows($result) > 0) {
+					?>
+
+					<?php while($row = mysqli_fetch_array($result)) { ?>
+						<tr>
+							<td><?php echo $count++ ?></td>
+							<td><?php echo $row['first_name'] . " " . $row['last_name'] ?></td>
+							<td><?php echo $row['email'] ?></td>
+							<td><?php echo $row['role'] ?></td>
+							<td>
+								<a href="#" class="l-btn l-btn-s">Edit</a>
+                				<a class="l-btn l-btn-d" href="repo/users/delete_user.php?id=<?php echo $row['id']; ?>">del</a>
+							</td>
+						</tr>
+					<?php } ?>
+
+					<?php } else { ?>
+					<?php echo "0 results"; } ?>
+
+				</table>
             </div>
 		</div>
 	</body>

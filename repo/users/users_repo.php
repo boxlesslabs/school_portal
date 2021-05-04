@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require '../db/db.php';
+    require '../../db/db.php';
     
     if ( !isset($_POST['first_name'], $_POST['last_name'], $_POST['email'], $_POST['password'], $_POST['role']) ) {
         // Could not get the data that should have been sent.
@@ -16,7 +16,7 @@
     $sql = "INSERT INTO accounts ". "(first_name, last_name, email, password, role) ". "VALUES('$param_first_name','$param_last_name','$param_email','$param_password', '$param_role')";
 
     if (mysqli_query($con, $sql)) {
-        header('Location: ../home.php');
+        header('Location: ../../home.php');
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }

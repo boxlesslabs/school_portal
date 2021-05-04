@@ -11,8 +11,6 @@
                     <input type="password" name="password" placeholder="Password" id="password" required>
                     <input type="submit" value="Login">
                 </form>
-
-                <!-- <a href="home.html">Home</a> -->
             </div>
         </div>
 	</body>

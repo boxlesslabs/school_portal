@@ -23,41 +23,41 @@
             </div>
     
             <div class="con-body">
-				<?php
-					require 'db/db.php';
-					$result = mysqli_query($con, "SELECT * FROM classes ORDER BY id");
-					$count = 1;
+				<table>
+					<tr>
+						<th>S/N</th>
+						<th>Name</th>
+						<th>Participants</th>
+						<th>Start Date</th>
+						<th>Venue</th>
+						<th></th>
+					</tr>
 
-					if (mysqli_num_rows($result) > 0) {
-						// output data of each row
-						while($row = mysqli_fetch_array($result)) {
-							echo "<table>";
-								echo "<tr>";
-									echo "<th>S/N</th>";
-									echo "<th>Name</th>";
-									echo "<th>No of Participants</th>";
-									echo "<th>Start Date</th>";
-									echo "<th>Venue</th>";
-									echo "<th></th>";
-								echo "</tr>";
-							while($row = mysqli_fetch_array($result)){
-								echo "<tr>";
-									echo "<td>" . $count++ . "</td>";
-									echo "<td>" . $row['name'] . "</td>";
-									echo "<td>" . $row['participants'] . "</td>";
-									echo "<td>" . $row['start_date'] . "</td>";
-									echo "<td>" . $row['venue'] . "</td>";
-									echo "<td>" . "<button>edit</button> <button>del</button>" . "</td>";
-								echo "</tr>";
-							}
-        					echo "</table>";
-						}
-					} else {
-						echo "0 results";
-					}
-					
-					$con->close();
-				?>
+					<?php require 'db/db.php';?>
+					<?php 
+						$result = mysqli_query($con, "SELECT classes.id, classes.name AS class_name, classes.participants, classes.start_date, classes.venue, venues.address FROM classes INNER JOIN venues ON classes.venue = venues.id");
+						$count = 1;
+						if (mysqli_num_rows($result) > 0) {
+					?>
+
+					<?php while($row = mysqli_fetch_array($result)) { ?>
+						<tr>
+							<td><?php echo $count++ ?></td>
+							<td><?php echo $row['class_name'] ?></td>
+							<td><?php echo $row['participants'] ?></td>
+							<td><?php echo $row['start_date'] ?></td>
+							<td><?php echo $row['address'] ?></td>
+							<td style="width: 120px;">
+								<a href="#" class="l-btn l-btn-s">Edit</a>
+                				<a class="l-btn l-btn-d" href="repo/classes/delete_class.php?id=<?php echo $row['id']; ?>">del</a>
+							</td>
+						</tr>
+					<?php } ?>
+
+					<?php } else { ?>
+					<?php echo "0 results"; } ?>
+
+				</table>
             </div>
 		</div>
 	</body>

@@ -89,7 +89,7 @@ form input[type="submit"]:hover {
 .navtop div {
 	display: flex;
 	margin: 0 auto;
-	width: 1000px;
+	width: 1200px;
 	height: 100%;
 }
 .navtop div h1, .navtop div a {
@@ -120,7 +120,7 @@ body.loggedin {
 	background-color: #f3f4f7;
 }
 .content {
-	width: 1000px;
+	width: 1200px;
 	margin: 0 auto;
 }
 .content h2 {
@@ -236,4 +236,19 @@ ul.breadcrumbs {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+.l-btn {
+    font-size: 13px;
+    border-radius: 4px;
+	text-decoration: none;
+    padding: .1rem .5rem;
+    margin: 0 .2rem;
+}
+.l-btn-d {
+    border: 1px solid #d41f1f;
+    color: #d41f1f;
+}
+.l-btn-s {
+    border: 1px solid #0e840c;
+    color: #0e840c;
 }
