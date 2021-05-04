@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Home Page</title>
+
+        <!-- link external style sheets -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+        <link rel="stylesheet" href="style.css" type="text/css">
+
+        <!-- link google fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;700&display=swap" rel="stylesheet">
+	</head>
+
+	<body class="loggedin">
+		<nav class="navtop">
+			<div>
+				<h1>Portal</h1>
+                <a href="home.html"><i class="fas fa-address-card"></i>Users</a>
+                <a href="classes.html"><i class="fas fa-book-reader"></i>Classes</a>
+                <a href="venues.html"><i class="fas fa-building"></i>Venues</a>
+				<a href="index.html"><i class="fas fa-sign-out-alt"></i>Logout</a>
+			</div>
+		</nav>
+		<div class="content">
+			<h2>Home</h2>
+
+			<p>Welcome back</p>
+
+            <div class="panel">
+                <h3>All Users</h3>
+    
+                <a href="pages/create_user.html" class="btn">Create User</a>
+            </div>
+    
+            <div class="con-body">
+                <table>
+                    <thead>
+                      <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td data-column="First Name">James</td>
+                        <td data-column="Last Name">Matman</td>
+                        <td data-column="email">Chief Sandwich Eater</td>
+                        <td>
+                            <button>edit</button>
+                            <button>del</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td data-column="First Name">Andor</td>
+                        <td data-column="Last Name">Nagy</td>
+                        <td data-column="email">Designer</td>
+                        <td>
+                            <button>edit</button>
+                            <button>del</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td data-column="First Name">Tamas</td>
+                        <td data-column="Last Name">Biro</td>
+                        <td data-column="email">Game Tester</td>
+                        <td>
+                            <button>edit</button>
+                            <button>del</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,239 @@
+body {
+    margin: 0%;
+} 
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+button {
+  font-family: 'Comfortaa', cursive;
+}
+
+body,
+p,
+span,
+input {
+  font-family: 'Quicksand', sans-serif !important;
+}
+.uk-container-large {
+  max-width: 1300px !important;
+  margin: 0 auto;
+}
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.login {
+  width: 500px;
+  margin: 100px auto;
+}
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 20px;
+}
+form label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: gainsboro;
+  color: #6b6565;
+}
+form input[type="password"], form input[type="text"], form input[type="date"], select {
+  width: 83%;
+  height: 48px;
+  border: 1px solid #dee0e4;
+  margin-bottom: 20px;
+  padding: 0 15px; 
+}
+form input[type="submit"] {
+  width: 100%;
+  margin-top: 20px;
+  background-color: #1fa949;
+  border: 0;
+  color: #ffffff;
+  transition: background-color 0.2s;
+  font-size: 18px;
+  padding: .8rem;
+  font-weight: bold;
+  cursor: pointer;
+
+}
+form input[type="submit"]:hover {
+	background-color: #0e840c;
+  transition: background-color 0.2s;
+}
+.form-area form input[type="password"], form input[type="text"], form input[type="date"], select {
+  width: 100%;
+}
+.form-area form input[type="submit"] {
+  font-size: 14px;
+  padding: .8rem;
+}
+
+.navtop {
+	background-color: #222222;
+	height: 60px;
+	width: 100%;
+	border: 0;
+}
+.navtop div {
+	display: flex;
+	margin: 0 auto;
+	width: 1000px;
+	height: 100%;
+}
+.navtop div h1, .navtop div a {
+	display: inline-flex;
+	align-items: center;
+}
+.navtop div h1 {
+	flex: 1;
+	font-size: 24px;
+	padding: 0;
+	margin: 0;
+	color: #eaebed;
+	font-weight: normal;
+}
+.navtop div a {
+	padding: 0 20px;
+	text-decoration: none;
+	color: #c1c4c8;
+	font-weight: bold;
+}
+.navtop div a i {
+	padding: 2px 8px 0 0;
+}
+.navtop div a:hover {
+	color: #eaebed;
+}
+body.loggedin {
+	background-color: #f3f4f7;
+}
+.content {
+	width: 1000px;
+	margin: 0 auto;
+}
+.content h2 {
+	margin: 0;
+	padding: 25px 0;
+	font-size: 22px;
+	color: #4a536e;
+}
+.content > h2 {
+  margin-top: 3rem;
+  font-weight: 300;
+}
+.content > p {
+	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+	margin: 25px 0;
+	padding: 25px;
+	background-color: #fff;
+}
+.con-body {
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+	padding: 25px;
+	background-color: #fff;
+  margin: 1.5rem 0;
+}
+.content > p table td, .content > div table td {
+	padding: 5px;
+}
+.content > p table td:first-child, .content > div table td:first-child {
+	font-weight: bold;
+	color: #4a536e;
+	padding-right: 15px;
+}
+.content > div p {
+	padding: 5px;
+	margin: 0 0 10px 0;
+}
+table {
+  width: 100%;
+  margin: 3rem 0;
+	border-collapse: collapse;
+}
+tr:nth-of-type(odd) { 
+	background: #eee; 
+}
+th { 
+	background: #222222; 
+	color: white; 
+	font-weight: bold; 
+}
+td, th { 
+	padding: 10px; 
+	border: 1px solid #ccc; 
+	text-align: left; 
+	font-size: 18px;
+}
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+	table { 
+	  width: 100%; 
+	}
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	tr { border: 1px solid #ccc; }
+	td { 
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+	td:before { 
+		position: absolute;
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+		content: attr(data-column);
+		color: #000;
+		font-weight: bold;
+	}
+}
+.panel {
+  margin: 3rem 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn {
+  background-color: #1fa949;
+  border: 1px solid;
+  color: #ffffff;
+  transition: background-color 0.2s;
+  font-size: 12px;
+  padding: .6rem 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+}
+ul.breadcrumbs li {
+  display: inline-block;
+  font-size: 16px;
+  margin: 0 .5rem;
+}
+
+ul.breadcrumbs {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
