@@ -1,43 +1,19 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>Home Page</title>
-
-        <!-- link external style sheets -->
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
-        <link rel="stylesheet" href="style.css" type="text/css">
-
-        <!-- link google fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;700&display=swap" rel="stylesheet">
-	</head>
+  <?php require 'pages/header.php';?>
 
 	<body class="loggedin">
-		<nav class="navtop">
-			<div>
-				<h1>Portal</h1>
-                <a href="home.html"><i class="fas fa-address-card"></i>Users</a>
-                <a href="classes.html"><i class="fas fa-book-reader"></i>Classes</a>
-                <a href="venues.html"><i class="fas fa-building"></i>Venues</a>
-				<a href="index.html"><i class="fas fa-sign-out-alt"></i>Logout</a>
-			</div>
-		</nav>
-		<div class="content">
-			<h2>Classes</h2>
+    <?php require 'pages/nav.php';?>
 
-            <div>
-                <ul class="breadcrumbs">
-                    <li><a href="home.html">home/</a></li>
-                    <li>classes</li>
-                </ul>
-            </div>
+		<div class="content">
+			<h2>Home</h2>
+
+			<p>Welcome back</p>
 
             <div class="panel">
-                <h3>All Classes</h3>
+                <h3>All Users</h3>
     
-                <button class="btn">Add a class</button>
+                <a href="create_user.php" class="btn">Create User</a>
             </div>
     
             <div class="con-body">
