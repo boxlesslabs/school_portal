@@ -6,7 +6,7 @@
     <?php require 'pages/nav.php';?>
 
 		<div class="content">
-			<h2>Classes</h2>
+			<h2>Venues</h2>
 
             <div>
                 <ul class="breadcrumbs">
@@ -22,45 +22,36 @@
             </div>
     
             <div class="con-body">
-                <table>
-                    <thead>
-                      <tr>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Email</th>
-                        <th></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td data-column="First Name">James</td>
-                        <td data-column="Last Name">Matman</td>
-                        <td data-column="email">Chief Sandwich Eater</td>
-                        <td>
-                            <button>edit</button>
-                            <button>del</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td data-column="First Name">Andor</td>
-                        <td data-column="Last Name">Nagy</td>
-                        <td data-column="email">Designer</td>
-                        <td>
-                            <button>edit</button>
-                            <button>del</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td data-column="First Name">Tamas</td>
-                        <td data-column="Last Name">Biro</td>
-                        <td data-column="email">Game Tester</td>
-                        <td>
-                            <button>edit</button>
-                            <button>del</button>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+				<?php
+					require 'db/db.php';
+
+					$sql = "SELECT name, address FROM venues";
+					$result = $con->query($sql);
+
+					if ($result->num_rows > 0) {
+						// output data of each row
+						while($row = $result->fetch_assoc()) {
+							echo "<table>";
+								echo "<tr>";
+									echo "<th>Name</th>";
+									echo "<th>Address</th>";
+									echo "<th></th>";
+								echo "</tr>";
+							while($row = mysqli_fetch_array($result)){
+								echo "<tr>";
+									echo "<td>" . $row['name'] . "</td>";
+									echo "<td>" . $row['address'] . "</td>";
+									echo "<td>" . "<button>edit</button> <button>del</button>" . "</td>";
+								echo "</tr>";
+							}
+        					echo "</table>";
+						}
+					} else {
+						echo "0 results";
+					}
+					
+					$con->close();
+				?>
             </div>
 		</div>
 	</body>
