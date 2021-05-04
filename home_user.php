@@ -1,51 +1,49 @@
-<?php require 'helpers/session.php' ?>
+<?php require 'helpers/session_user.php' ?>
+
 <!DOCTYPE html>
 <html>
   <?php require 'partials/header.php';?>
 
 	<body class="loggedin">
-    <?php require 'partials/nav.php';?>
+    <?php require 'partials/nav_user.php';?>
 
 		<div class="content">
-			<h2>Venues</h2>
+			<h2>Home</h2>
 
-            <div>
-                <ul class="breadcrumbs">
-                    <li><a href="home.php">home/</a></li>
-                    <li>venues</li>
-                </ul>
-            </div>
+			<p>Welcome back <b><?php echo htmlspecialchars($_SESSION["name"]); ?></b></p>
 
             <div class="panel">
-                <h3>All Venues</h3>
+                <h3>Courses</h3>
     
-                <a href="create_venue.php" class="btn">Create a venue</a>
+                
             </div>
     
             <div class="con-body">
-				<?php
+            <?php
 					require 'db/db.php';
-
-					$sql = "SELECT * FROM venues ORDER BY id";
-					$result = mysqli_query($con, $sql);
+					$result = mysqli_query($con, "SELECT * FROM classes INNER JOIN venues ON venues.id = classes.venue");
 					$count = 1;
 
 					if (mysqli_num_rows($result) > 0) {
 						// output data of each row
-						while($row = mysqli_fetch_assoc($result)) {
+						while($row = mysqli_fetch_array($result)) {
 							echo "<table>";
 								echo "<tr>";
 									echo "<th>S/N</th>";
 									echo "<th>Name</th>";
-									echo "<th>Address</th>";
+									echo "<th>Participants allowed</th>";
+									echo "<th>Start Date</th>";
+									echo "<th>Venue</th>";
 									echo "<th></th>";
 								echo "</tr>";
 							while($row = mysqli_fetch_array($result)){
 								echo "<tr>";
 									echo "<td>" . $count++ . "</td>";
 									echo "<td>" . $row['name'] . "</td>";
+									echo "<td>" . $row['participants'] . "</td>";
+									echo "<td>" . $row['start_date'] . "</td>";
 									echo "<td>" . $row['address'] . "</td>";
-									echo "<td>" . "<button>edit</button> <button>del</button>" . "</td>";
+									echo "<td>" . "<button>register</button>";
 								echo "</tr>";
 							}
         					echo "</table>";

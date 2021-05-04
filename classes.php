@@ -1,10 +1,10 @@
-<?php require 'pages/session.php' ?>
+<?php require 'helpers/session.php' ?>
 <!DOCTYPE html>
 <html>
-  <?php require 'pages/header.php';?>
+  <?php require 'partials/header.php';?>
 
 	<body class="loggedin">
-    <?php require 'pages/nav.php';?>
+    <?php require 'partials/nav.php';?>
 
 		<div class="content">
 			<h2>Classes</h2>
